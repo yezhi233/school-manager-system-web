@@ -1,23 +1,23 @@
 <template>
   <global-layout @dynamicRouterShow="dynamicRouterShow">
     <!-- update-begin- author:sunjianlei --- date:20191009 --- for: 提升右键菜单的层级 -->
-    <contextmenu :itemList="menuItemList" :visible.sync="menuVisible" style="z-index: 9999;" @select="onMenuSelect"/>
+<!--    <contextmenu :itemList="menuItemList" :visible.sync="menuVisible" style="z-index: 9999;" @select="onMenuSelect"/>-->
     <!-- update-end- author:sunjianlei --- date:20191009 --- for: 提升右键菜单的层级 -->
-    <a-tabs
-      @contextmenu.native="e => onContextmenu(e)"
-      v-if="multipage"
-      :active-key="activePage"
-      class="tab-layout-tabs"
-      style="height:52px"
-      :hide-add="true"
-      type="editable-card"
-      @change="changePage"
-      @tabClick="tabCallBack"
-      @edit="editPage">
-      <a-tab-pane :id="page.fullPath" :key="page.fullPath" v-for="page in pageList" :closable="!(page.meta.title=='首页')">
-        <span slot="tab" :pagekey="page.fullPath">{{ page.meta.title }}</span>
-      </a-tab-pane>
-    </a-tabs>
+<!--    <a-tabs-->
+<!--      @contextmenu.native="e => onContextmenu(e)"-->
+<!--      v-if="multipage"-->
+<!--      :active-key="activePage"-->
+<!--      class="tab-layout-tabs"-->
+<!--      style="height:52px"-->
+<!--      :hide-add="true"-->
+<!--      type="editable-card"-->
+<!--      @change="changePage"-->
+<!--      @tabClick="tabCallBack"-->
+<!--      @edit="editPage">-->
+<!--      <a-tab-pane :id="page.fullPath" :key="page.fullPath" v-for="page in pageList" :closable="!(page.meta.title=='首页')">-->
+<!--        <span slot="tab" :pagekey="page.fullPath">{{ page.meta.title }}</span>-->
+<!--      </a-tab-pane>-->
+<!--    </a-tabs>-->
     <div style="margin: 12px 12px 0;">
       <!-- update-begin-author:taoyan date:20201221 for:此处删掉transition标签 不知道为什么加上后 页面路由切换的时候即1及菜单切到2及菜单的时候 两个菜单页面会同时出现300-500秒左右 -->
       <keep-alive v-if="multipage">
